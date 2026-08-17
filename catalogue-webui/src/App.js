@@ -10,14 +10,14 @@ const App = () => {
 
   return (
     <div className="App">
-    <h1> Catalogue Management System</h1>
-    <BookForm>
-      currentBook = {selectedBook};
-      refreashList = {refreshList};
-      clearSection = {() => setSelectedBook(null)}
-    </BookForm>
+      <h1>Catalogue Management System</h1>
+      <BookForm
+        currentBook={currentBook}
+        refreshList={refreshList}
+        clearSelection={() => setCurrentBook(null)}
+      />
+      <BookList key={refresh} onEdit={setCurrentBook} />
     </div>
   );
-
 };
 export default App;

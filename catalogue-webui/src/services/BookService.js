@@ -1,14 +1,14 @@
 import axios from "axios";
 
-const API_BASE_URL = "http:localhost:8080/api/books";
+const API_BASE_URL = "http://localhost:8080/api/books";
 
 class BookService{
     getAllBooks(){
         return axios.get(`${API_BASE_URL}/getAllBooks`);
     }
 
-    addBook(Book){
-        return axios.post(`${API_BASE_URL}/Book`, book)
+    addBook(Book){                              // capital "Book" (the parameter)
+        return axios.post(`${API_BASE_URL}/Book`, book)   // lowercase "book" (used here)
     }
 
     updateBooks(id, book){
