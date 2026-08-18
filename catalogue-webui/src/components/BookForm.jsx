@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
 import BookService from "../services/BookService";
 
-const BookForm=({currentBook, refreashList, clearSection}) => {
+const BookForm=({currentBook, refreshList, clearSection}) => {
     const [book, setBook] = useState({
         name : "",
         isbnNumber : "",
@@ -26,14 +26,14 @@ const BookForm=({currentBook, refreashList, clearSection}) => {
         }else{
             await BookService.addBook(book);
         }
-        refreashList();
+        refreshList();
         clearSection();
         setBook({
-        name : "",
-        isbnNumber : "",
-        publishDate : "",
-        price : "",
-        bookType : "HARDCOVER",
+        name : "NOT MY TYPE",
+        isbnNumber : "592-84265",
+        publishDate : "2026-08-18",
+        price : "24.99",
+        bookType : "EBOOK",
         });
     };
 return (
