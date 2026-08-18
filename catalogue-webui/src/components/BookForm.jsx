@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
 import BookService from "../services/BookService";
 
-const BookForm=({currentBook, refreshList, clearSection}) => {
+const BookForm=({currentBook, refreshList, clearSelection}) => {
     const [book, setBook] = useState({
         name : "",
         isbnNumber : "",
@@ -27,7 +27,7 @@ const BookForm=({currentBook, refreshList, clearSection}) => {
             await BookService.addBook(book);
         }
         refreshList();
-        clearSection();
+        clearSelection();
         setBook({
         name : "NOT MY TYPE",
         isbnNumber : "592-84265",
